@@ -1,0 +1,70 @@
+:root {
+  --radius: 5px;
+  --padding: 5px;
+}
+
+.container {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    display: grid;
+    grid-gap: 0px;
+    grid-template-areas:
+    "content1 content1 content1"
+    "content3 content3 content3"
+    "content4 content4 content4";
+}
+
+#content1 {
+    background: white;
+    border-radius: var(--radius);
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+    grid-area: content1;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+  
+}
+
+#content1 > div {
+    background-color: white;
+    grid-gap: 10px;
+}
+
+#content3 {
+    background: white;
+    padding-left: 130px;
+    padding-right: 130px;
+    grid-area: content3;
+    height: 110px;
+    display:grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-gap: 10px;
+}
+#content3 > div {
+    background-color: white;
+}
+
+
+#content4 {
+    background: white;
+    border-radius: var(--radius);
+    padding-top: var(--padding);
+    grid-area: content4;
+    display: grid;
+    height: 1000px;
+    grid-template-columns:1fr 20fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+}
+
+#content4 > div {
+    background: white;}
