@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
     <link rel="stylesheet" href="read.css"/>
-    <title>Filosofisk  Debatforum</title>
+    <title>My Notes</title>
     <style>
         .button {
         background-color: #90c7c5;
