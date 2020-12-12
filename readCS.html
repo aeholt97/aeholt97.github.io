@@ -80,11 +80,10 @@
     </style>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script>
-      var currentIndex = 0;
-      var len = locations.length;
       $(document).ready(function(){
         $('ul#pdfs a').click(function(e) {
-            e.preventDefault()
+            e.preventDefault();
+            
             $("#frame").attr("src", $(this).attr("href"));
         });
       });
