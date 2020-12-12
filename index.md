@@ -79,7 +79,7 @@
     </style>
     <script>
       $(document).ready(function(){
-        $('a').click(function(e) {
+        $("ul#pdfs a").click(function(e) {
             e.preventDefault();
             
             $("#frame").attr("src", $(this).attr("href"));
