@@ -125,7 +125,7 @@
             </ul>
         </div>
         <div id="nested 2">
-            <iframe id="frame" src="KogSem/CSkg1.pdf" width="100%" height="100%">
+            <iframe id="frame" src="https://aeholt97.github.io/KogSem/KG/CSkg1.pdf" width="100%" height="100%">
             </iframe>
         </div>
         <div id="nested 1"></div>
