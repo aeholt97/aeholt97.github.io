@@ -76,8 +76,20 @@
         font-size: 15px;
         cursor: pointer;
         }
-    </style></head>
-<body>
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('ul#pdfs a').click(function(e) {
+            e.preventDefault();
+            
+            $("#frame").attr("src", $(this).attr("href"));
+        });
+      });
+    </script>
+
+</head>
+
 <div class="container">
     <div id="content1">
         <div id="nested2">
@@ -86,20 +98,37 @@
             <a class="buttonSC" href="https://aeholt97.github.io/readCSpp.html">Cognitive Semiotics Course</a></div>
     </div>
     <div id="content3">
-        <div id="nested1"></div>
+        <div id="nested1"><br>
+            <input class="button3" type = "button" value = "Previous"/>
+        </div>
         <div id="nested2">
             <p class="para"><br>Go to:</p>
             <a class="goto" href="https://aeholt97.github.io/readCS.html">Notes</a>
         </div>
-        <div id="nested3"></div>    
+        <div id="nested3"> <br>
+            <input class="button3" type = "button" value = "Next"/>
+        </div>    
     </div>
     <div id="content4">
-        <div></div>
+        <div>
+            <ul id="pdfs">
+                <li><a href="https://aeholt97.github.io/KogSem/CSkg1.pdf">kg1</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSpp2.pdf">kg2</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSpp3.pdf">kg3</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSpp4.pdf">kg4</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSpp5.pdf">kg5</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSpp6.pdf">kg6</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSpp7.pdf">kg7</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSpp8.pdf">kg8</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSpp9.pdf">kg9</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSpp11.pdf">kg11</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSpp12.pdf">kg12</a></li>
+            </ul>
+        </div>
         <div id="nested 2">
-            <iframe id="frame" src="https://aeholt97.github.io/KogSem/PP/" width="100%" height="100%">
+            <iframe id="frame" src="https://aeholt97.github.io/KogSem/PP/CSpp1.pdf" width="100%" height="100%">
             </iframe>
         </div>
         <div id="nested 1"></div>
     </div>
 </div>
-</body>

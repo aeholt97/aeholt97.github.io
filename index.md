@@ -77,30 +77,57 @@
         cursor: pointer;
         }
     </style>
-   </head>
-<body>
+    <script>
+      $(document).ready(function(){
+        $('a').click(function(e) {
+            e.preventDefault();
+            
+            $("#frame").attr("src", $(this).attr("href"));
+        });
+      });
+    </script>
+
+</head>
+
 <div class="container">
     <div id="content1">
         <div id="nested2">
-            <a class="button" href="https://aeholt97.github.io/readSC.html">Social Cognition Course</a></div>
+            <a class="button" href="readSC.html">Social Cognition Course</a></div>
         <div id="nested3">
-            <a class="buttonSC" href="https://aeholt97.github.io/readCS.html">Cognitive Semiotics Course</a></div>
+            <a class="buttonSC" href="readCS.html">Cognitive Semiotics Course</a></div>
     </div>
     <div id="content3">
-        <div id="nested1"><br</div>
+        <div id="nested1"><br>
+            <input class="button3" type = "button" value = "Previous"/>
+        </div>
         <div id="nested2">
             <p class="para"><br>Go to:</p>
-            <a class="goto" href = "https://aeholt97.github.io/readCSpp.html">slides / Power points</a>
+            <a class="goto" href = "readCSpp.html">slides / Power points</a>
         </div>
-        <div id="nested3"></div>    
+        <div id="nested3"> <br>
+            <input class="button3" type = "button" value = "Next"/>
+        </div>    
     </div><br>
     <div id="content4">
-        <div id="nested"></div>
+        <div id="nested">
+            <ul id="pdfs">
+                <li><a href="https://aeholt97.github.io/KogSem/CSkg1.pdf">kg1</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSkg2.pdf">kg2</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSkg3.pdf">kg3</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSkg4.pdf">kg4</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSkg5.pdf">kg5</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSkg6.pdf">kg6</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSkg7.pdf">kg7</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSkg8.pdf">kg8</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSkg9.pdf">kg9</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSkg11.pdf">kg11</a></li>
+                <li><a href="https://aeholt97.github.io/KogSem/CSkg12.pdf">kg12</a></li>
+            </ul>
+        </div>
         <div id="nested 2">
-            <iframe id="frame" src="https://aeholt97.github.io/KogSem/KG" width="100%" height="100%">
+            <iframe id="frame" src="KogSem/CSkg1.pdf" width="100%" height="100%">
             </iframe>
         </div>
         <div id="nested 1"></div>
     </div>
 </div>
-</body>

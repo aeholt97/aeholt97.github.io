@@ -77,8 +77,20 @@
         margin: 4px 2px;
         cursor: pointer;
         }
-    </style></head>
-<body>
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+   <script>
+      $(document).ready(function(){
+        $('ul#pdfs a').click(function(e) {
+            e.preventDefault();
+            
+            $("#frame").attr("src", $(this).attr("href"));
+        });
+      });
+    </script>
+
+</head>
+
 <div class="container">
     <div id="content1">
         <div id="nested2">
@@ -87,20 +99,37 @@
             <a class="button" href="https://aeholt97.github.io/readCS.html">Cognitive Semiotics Course</a></div>
     </div>
     <div id="content3">
-        <div id="nested1"></div>
+        <div id="nested1"><br>
+            <input class="button3" type = "button" value = "Previous"/>
+        </div>
         <div id="nested2">
             <p class="para"><br>Go to:</p>
             <a class="goto" href="https://aeholt97.github.io/readSCpp.html"/>slides / Power points</a>
         </div>
-        <div id="nested3"></div>    
+        <div id="nested3"> <br>
+            <input class="button3" type = "button" value = "Next"/>
+        </div>    
     </div>
     <div id="content4">
-        <div></div>
+        <div>
+            <ul id=pdfs>
+                <a href="https://aeholt97.github.io/SocCog/SCkg1.pdf">kg1</a>
+                <a href="https://aeholt97.github.io/SocCog/SCkg2.pdf">kg2</a>
+                <a href="https://aeholt97.github.io/SocCog/SCkg3.pdf">kg3</a>
+                <a href="https://aeholt97.github.io/SocCog/SCkg4.pdf">kg4</a>
+                <a href="https://aeholt97.github.io/SocCog/SCkg5.pdf">kg5</a>
+                <a href="https://aeholt97.github.io/SocCog/SCkg6.pdf">kg6</a>
+                <a href="https://aeholt97.github.io/SocCog/SCkg7.pdf">kg7</a>
+                <a href="https://aeholt97.github.io/SocCog/SCkg8.pdf">kg8</a>
+                <a href="https://aeholt97.github.io/SocCog/SCkg9.pdf">kg9</a>
+                <a href="https://aeholt97.github.io/SocCog/SCkg11.pdf">kg11</a>
+                <a href="https://aeholt97.github.io/SocCog/SCkg12.pdf">kg12</a>
+            </ul>
+        </div>
         <div id="nested 2">
-            <iframe id="frame" src="https://aeholt97.github.io/SocCog/KG/" width="100%" height="100%">
+            <iframe id="frame" src="https://aeholt97.github.io/SocCog/SCkg1.pdf" width="100%" height="100%">
             </iframe>
         </div>
         <div id="nested 1"></div>
     </div>
 </div>
-</body>
