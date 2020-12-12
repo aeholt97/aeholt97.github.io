@@ -81,7 +81,6 @@
       $(document).ready(function(){
         $("ul#pdfs a").click(function(e) {
             e.preventDefault();
-            
             $("#frame").attr("src", $(this).attr("href"));
         });
       });
