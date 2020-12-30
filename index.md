@@ -77,15 +77,6 @@
         cursor: pointer;
         }
     </style>
-    <script>
-      $(document).ready(function(){
-        $("ul#pdfs a").click(function(e) {
-            e.preventDefault();
-            $("#frame").attr("src", $(this).attr("href"));
-        });
-      });
-    </script>
-
 </head>
 
 <div class="container">
@@ -110,17 +101,17 @@
     <div id="content4">
         <div id="nested">
             <ul id="pdfs">
-                <li><a href="https://aeholt97.github.io/KogSem/KG/CSkg1.pdf">kg1</a></li>
-                <li><a href="https://aeholt97.github.io/KogSem/KG/CSkg2.pdf">kg2</a></li>
-                <li><a href="https://aeholt97.github.io/KogSem/KG/CSkg3.pdf">kg3</a></li>
-                <li><a href="https://aeholt97.github.io/KogSem/KG/CSkg4.pdf">kg4</a></li>
-                <li><a href="https://aeholt97.github.io/KogSem/KG/CSkg5.pdf">kg5</a></li>
-                <li><a href="https://aeholt97.github.io/KogSem/KG/CSkg6.pdf">kg6</a></li>
-                <li><a href="https://aeholt97.github.io/KogSem/KG/CSkg7.pdf">kg7</a></li>
-                <li><a href="https://aeholt97.github.io/KogSem/KG/CSkg8.pdf">kg8</a></li>
-                <li><a href="https://aeholt97.github.io/KogSem/KG/CSkg9.pdf">kg9</a></li>
-                <li><a href="https://aeholt97.github.io/KogSem/KG/CSkg11.pdf">kg11</a></li>
-                <li><a href="https://aeholt97.github.io/KogSem/KG/CSkg12.pdf">kg12</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/KogSem/KG/CSkg1.pdf">kg1</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/KogSem/KG/CSkg2.pdf">kg2</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/KogSem/KG/CSkg3.pdf">kg3</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/KogSem/KG/CSkg4.pdf">kg4</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/KogSem/KG/CSkg5.pdf">kg5</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/KogSem/KG/CSkg6.pdf">kg6</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/KogSem/KG/CSkg7.pdf">kg7</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/KogSem/KG/CSkg8.pdf">kg8</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/KogSem/KG/CSkg9.pdf">kg9</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/KogSem/KG/CSkg11.pdf">kg11</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/KogSem/KG/CSkg12.pdf">kg12</a></li>
             </ul>
         </div>
         <div id="nested 2">
@@ -130,3 +121,13 @@
         <div id="nested 1"></div>
     </div>
 </div>
+<script>
+    console.log("I ran");
+    let elemtns = document.getElementsByClassName("MineLinks");
+    for(let i = 0; i < elemtns.length; i++){
+        elemtns[i].addEventListener("click", (e) => {
+            e.preventDefault();
+            document.getElementById("frame").src = elemtns[i].href;   
+        })
+}
+</script>

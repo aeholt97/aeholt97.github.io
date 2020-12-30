@@ -78,15 +78,6 @@
         }
     </style>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script>
-      $(document).ready(function(){
-        $("ul#pdfs a").click(function(e) {
-            e.preventDefault();
-            $("#frame").attr("src", $(this).attr("href"));
-        });
-      });
-    </script>
-
 </head>
 
 <div class="container">
@@ -108,17 +99,17 @@
     <div id="content4">
         <div>
             <ul id="pdfs">
-                <li><a href="https://aeholt97.github.io/SocCog/PP/SCpp1.pdf">pp1</a></li>
-                <li><a href="https://aeholt97.github.io/SocCog/PP/SCpp2.pdf">pp2</a></li>
-                <li><a href="https://aeholt97.github.io/SocCog/PP/SCpp3.pdf">pp3</a></li>
-                <li><a href="https://aeholt97.github.io/SocCog/PP/SCpp4.pdf">pp4</a></li>
-                <li><a href="https://aeholt97.github.io/SocCog/PP/SCpp5.pdf">pp5</a></li>
-                <li><a href="https://aeholt97.github.io/SocCog/PP/SCpp6.pdf">pp6</a></li>
-                <li><a href="https://aeholt97.github.io/SocCog/PP/SCpp7.pdf">pp7</a></li>
-                <li><a href="https://aeholt97.github.io/SocCog/PP/SCpp8.pdf">pp8</a></li>
-                <li><a href="https://aeholt97.github.io/SocCog/PP/SCpp9.pdf">pp9</a></li>
-                <li><a href="https://aeholt97.github.io/SocCog/PP/SCpp11.pdf">pp11</a></li>
-                <li><a href="https://aeholt97.github.io/SocCog/PP/SCpp12.pdf">pp12</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/SocCog/PP/SCpp1.pdf">pp1</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/SocCog/PP/SCpp2.pdf">pp2</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/SocCog/PP/SCpp3.pdf">pp3</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/SocCog/PP/SCpp4.pdf">pp4</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/SocCog/PP/SCpp5.pdf">pp5</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/SocCog/PP/SCpp6.pdf">pp6</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/SocCog/PP/SCpp7.pdf">pp7</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/SocCog/PP/SCpp8.pdf">pp8</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/SocCog/PP/SCpp9.pdf">pp9</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/SocCog/PP/SCpp11.pdf">pp11</a></li>
+                <li><a class="MineLinks" href="https://aeholt97.github.io/SocCog/PP/SCpp12.pdf">pp12</a></li>
             </ul>
         </div>
         <div id="nested 2">
@@ -129,3 +120,13 @@
         </div>
     </div>
 </div>
+<script>
+    console.log("I ran");
+    let elemtns = document.getElementsByClassName("MineLinks");
+    for(let i = 0; i < elemtns.length; i++){
+        elemtns[i].addEventListener("click", (e) => {
+            e.preventDefault();
+            document.getElementById("frame").src = elemtns[i].href;   
+        })
+}
+</script>
