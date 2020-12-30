@@ -82,6 +82,7 @@
     <script>
       $(document).ready(function(){
         $("ul#pdfs a").click(function(e) {
+            console.log("hej CS");
             e.preventDefault();
             $("#frame").attr("src", $(this).attr("href"));
         });
