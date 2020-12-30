@@ -88,14 +88,12 @@
     </div>
     <div id="content3">
         <div id="nested1"><br>
-            <input class="button3" type = "button" value = "Previous"/>
         </div>
         <div id="nested2">
             <p class="para"><br>Go to:</p>
             <a class="goto" href = "readCSpp.html">slides / Power points</a>
         </div>
         <div id="nested3"> <br>
-            <input class="button3" type = "button" value = "Next"/>
         </div>    
     </div><br>
     <div id="content4">
