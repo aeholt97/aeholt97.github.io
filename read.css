@@ -61,8 +61,8 @@
     padding-top: var(--padding);
     grid-area: content4;
     display: grid;
-    height: 1000px;
-    grid-template-columns:1fr 20fr 1fr;
+    height: 950px;
+    grid-template-columns:0.9fr 20fr;
     grid-template-rows: 1fr;
     grid-gap: 10px;
 }
