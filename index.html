@@ -77,17 +77,13 @@
         cursor: pointer;
         }
     </style>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script>
-      var locations = ["models/All19_lemma_model.html", "models/DF12_lemma_model.html", "models/EL7_lemma_model.html", "models/KF16_lemma_model.html", "models/RV11_lemma_model.html", "models/S19_lemma_model.html", "models/SF_lemma_model.html", "models/V9_lemma_model.html"];
-      var currentIndex = 0;
-      var len = locations.length;
+     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+     <script>
       $(document).ready(function(){
-        $(':button').click(function() {
-            currentIndex = this.value == "Next" ? 
-                    currentIndex < len - 1 ? ++currentIndex : len - 1 : 
-                    currentIndex > 0 ? --currentIndex : 0;
-            $('#frame').attr('src', locations[currentIndex]);
+        $('ul#pdfs a').click(function(e) {
+            e.preventDefault();
+            
+            $("#frame").attr("src", $(this).attr("href"));
         });
       });
     </script>
