@@ -62,7 +62,7 @@
     grid-area: content4;
     display: grid;
     height: 950px;
-    grid-template-columns:1fr 20fr;
+    grid-template-columns:1fr 25fr;
     grid-template-rows: 1fr;
     grid-gap: 10px;
 }
