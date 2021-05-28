@@ -5,9 +5,9 @@
 
 .container {
     font-family: "Inter", sans-serif;
-    font-weight: 800;
+    font-weight: normal;
     color: white;
-    text-transform: uppercase;
+    text-transform: none;
     font-size: 12px;
     display: grid;
     grid-gap: 0px;
