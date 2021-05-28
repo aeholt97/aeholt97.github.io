@@ -9,7 +9,6 @@
     color: white;
     text-transform: uppercase;
     font-size: 12px;
-    text-align: center;
     display: grid;
     grid-gap: 0px;
     grid-template-areas:
@@ -61,6 +60,7 @@
     padding-top: var(--padding);
     grid-area: content4;
     display: grid;
+    text-align: center;
     height: 950px;
     grid-template-columns:1fr 25fr;
     grid-template-rows: 1fr;
