@@ -4,11 +4,11 @@
 }
 
 .container {
-    font-family: "Inter", sans-serif;
+    font-family: 'Times New Roman';
     font-weight: normal;
     color: white;
     text-transform: none;
-    font-size: 12px;
+    font-size: 20px;
     display: grid;
     grid-gap: 0px;
     grid-template-areas:
@@ -17,7 +17,8 @@
 }
 
 #content1 {
-    background: #e0eaeb;
+    background: white;
+    line-height: 0px;
     border-radius: var(--radius);
     padding-top: var(--padding);
     padding-bottom: var(--padding);
@@ -41,15 +42,16 @@
 #content4 {
     background: white;
     border-radius: var(--radius);
-    padding-top: var(--padding);
+    padding-top: 15px;
     grid-area: content4;
     display: grid;
     text-align: center;
     height: 950px;
     grid-template-columns:1fr 25fr;
     grid-template-rows: 1fr;
-    grid-gap: 10px;
+    grid-gap:15px;
 }
 
 #content4 > div {
     background: white;}
+    text-align: left;
