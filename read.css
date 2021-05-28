@@ -25,6 +25,7 @@
     padding-left: var(--padding);
     padding-right: var(--padding);
     grid-area: content1;
+    text-align: left;
     height: 200px;
     display: grid;
     grid-template-columns: 1fr;
