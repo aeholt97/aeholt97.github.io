@@ -17,7 +17,7 @@
 }
 
 #content1 {
-    background: white;
+    background: #e0eaeb;
     border-radius: var(--radius);
     padding-top: var(--padding);
     padding-bottom: var(--padding);
@@ -39,7 +39,7 @@
 }
 
 #content3 {
-    background: white;
+    background: #e0eaeb;
     padding-left: 100px;
     padding-right: 100px;
     grid-area: content3;
