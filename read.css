@@ -35,7 +35,7 @@
 
 #content1 > div {
     background-color: white;
-    grid-gap: 5px;
+    grid-gap: 0px;
 }
 
 #content4 {
