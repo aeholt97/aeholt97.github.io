@@ -1,64 +1,343 @@
 <!doctype html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="read.css"/>
-    <title>Anton Holt Computational Linguistics exam spring 2021</title>
-    <style>
-        .button {
-        background-color: #90c7c5;
-        border: none;
-        color: white;
-        padding: 10px 10px;
-        text-align: center;
-        height: 80px;
-        text-decoration: none;
-        display: block;
-        font-size: 20px;
-        margin: 4px 2px;
-        cursor: pointer;
-        }
-        .headline {
-        color: black;
-        font-size: 20px;
-        }
-        .para {
-        color: black;
-        }
-    </style>
-     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
-     <script>
-      $(document).ready(function(){
-        $('ul#pdfs a').click(function(e) {
-            e.preventDefault();
-            
-            $("#frame").attr("src", $(this).attr("href"));
-        });
-      });
-    </script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Anton Elias Holt</title>
+<meta name="description" content="Anton Elias Holt — Research Fellow in Media Studies at Aarhus University, studying information disorders on social media."/>
+<style>
+  :root {
+    --accent: #90c7c5;
+    --accent-dark: #4b8b89;
+    --ink: #1c1c1c;
+    --muted: #5c5c5c;
+    --rule: #e3e3e3;
+    --bg: #ffffff;
+    --card: #f7f9f9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 48px 24px 64px; }
 
+  /* Header */
+  header { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+  header img {
+    width: 210px; height: 210px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    flex-shrink: 0;
+  }
+  .intro { flex: 1 1 320px; min-width: 260px; }
+  h1 { margin: 0 0 4px; font-size: 34px; letter-spacing: -0.5px; }
+  .role { margin: 0; color: var(--muted); font-size: 17px; }
+  .role strong { color: var(--ink); font-weight: 600; }
+
+  /* Links row */
+  .links { margin-top: 16px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .links a {
+    display: inline-block;
+    padding: 5px 13px;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    color: var(--accent-dark);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .links a:hover { background: var(--accent); color: #fff; }
+
+  /* Sections */
+  h2 {
+    margin: 44px 0 16px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-dark);
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 8px;
+  }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent-dark); }
+
+  /* Publications */
+  .pub { margin: 0 0 22px; padding-left: 16px; border-left: 3px solid var(--accent); }
+  .pub .title { font-weight: 600; display: block; }
+  .pub .venue { color: var(--muted); font-size: 15px; display: block; }
+  .pub .authors { font-size: 15px; display: block; }
+  .pub .doi { font-size: 14px; }
+  .pub .me { text-decoration: underline; }
+
+  /* Year-column timeline: positions, education, conferences, teaching */
+  .tl { display: grid; grid-template-columns: 110px 1fr; gap: 0 18px; }
+  .tl dt {
+    font-size: 14px;
+    color: var(--muted);
+    padding-top: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+  .tl dd { margin: 0 0 18px; }
+  .tl .what { font-weight: 600; display: block; }
+  .tl .where { color: var(--muted); font-size: 15px; display: block; font-style: italic; }
+  .tl .note { font-size: 15px; display: block; }
+  .tl .tag {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--accent);
+    color: var(--accent-dark);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    vertical-align: 1px;
+  }
+  .tl .tag.org { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* Project card */
+  .project {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .project + .project { margin-top: 12px; }
+  .project:hover { border-color: var(--accent); }
+  .project strong { display: block; color: var(--accent-dark); }
+  .project span { font-size: 15px; color: var(--muted); }
+
+  /* Footer / AI declaration */
+  footer {
+    margin-top: 56px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  footer h3 { margin: 0 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+  footer dl { margin: 8px 0 0; display: grid; grid-template-columns: max-content 1fr; gap: 2px 14px; }
+  footer dt { font-weight: 600; }
+  footer dd { margin: 0; }
+
+  @media (max-width: 560px) {
+    header { flex-direction: column; align-items: center; text-align: center; }
+    .links { justify-content: center; }
+    h1 { font-size: 28px; }
+  }
+</style>
 </head>
+<body>
+<div class="wrap">
 
-<div class="container">
-    <div id ="content1">
-        <p class="headline">Anton Elias Holt, AU576187</p>
-        <p class="para">LDA topic model vizualisations for the exam in Computational Linguistics</p>
-        <p class="para">Aarhus University</p>
-        <p class="para">Spring 2021</p><br>
+  <header>
+    <img src="anton.jpg" alt="Portrait of Anton Elias Holt"/>
+    <div class="intro">
+      <h1>Anton Elias Holt</h1>
+      <p class="role">
+        <strong>PhD Fellow</strong> at DATALAB – Center for Digital Social Research<br/>
+        Department of Media and Journalism Studies, Aarhus University
+      </p>
+      <ul class="links">
+        <li><a href="https://pure.au.dk/portal/en/persons/aeholt@cc.au.dk">AU Pure profile</a></li>
+        <li><a href="https://orcid.org/0009-0002-9642-8257">ORCID</a></li>
+        <li><a href="https://dk.linkedin.com/in/aeholt">LinkedIn</a></li>
+        <li><a href="https://github.com/YOUR-GITHUB-USERNAME">GitHub</a></li>
+      </ul>
     </div>
-    <div id="content4">
-        <div id="nested">
-            <ul id="pdfs">
-                <li><a href="models/All25_LDA_model.html">Aggregate model</a></li><br>
-                <li><a href="models/DF16_LDA_model.html">DF model</a></li><br>
-                <li><a href="models/EL14_LDA_model.html">EL model</a></li><br>
-                <li><a href="models/KF15_LDA_model.html">KF model</a></li><br>
-                <li><a href="models/RV17_LDA_model.html">RV model</a></li><br>
-                <li><a href="models/S19_LDA_model.html">S model</a></li><br>
-                <li><a href="models/SF16_LDA_model.html">SF model</a></li><br>
-                <li><a href="models/V13_LDA_model.html">V model</a></li><br>
-            </ul>
-        </div>
-        <div id="nested 2">
-            <iframe id="frame" src="models/All25_LDA_model.html" width="99%" height="99%">
-            </iframe>
-        </div>
-    </div>
+  </header>
+
+  <h2>About</h2>
+  <p>
+    I research information disorders on social media, with a particular focus on Europe. Using
+    primarily quantitative and computational methods — network analysis, natural language
+    processing and large-scale platform data — my dissertation examines how misinformation
+    has changed over time in relation to offline events, shifts in platform moderation practices,
+    and technological developments.
+  </p>
+  <p>
+    I am based at <a href="https://datalab.au.dk/">DATALAB – Center for Digital Social Research</a>
+    at Aarhus University, where I am part of the <em>Social Media Influence</em> project (2023–2028,
+    PI Anja Bechmann), studying social media as infrastructures of influence in national populations
+    with a focus on false information.
+  </p>
+  <p>
+    In spring 2026 I was a visiting scholar at the Annenberg School for Communication, University
+    of Pennsylvania, hosted by Professor Sandra González-Bailón, working on network analyses of
+    conspiratorial Facebook content.
+  </p>
+
+  <h2>Journal articles</h2>
+
+  <div class="pub">
+    <span class="title">What Facebook Users Flag as False News: A Mixed-Methods Investigation of User-Reported Links</span>
+    <span class="authors"><span class="me">Holt, A. E.</span> (2026)</span>
+    <span class="venue"><em>Digital Journalism</em>, advance online publication</span>
+    <span class="doi"><a href="https://doi.org/10.1080/21670811.2026.2703607">doi.org/10.1080/21670811.2026.2703607</a></span>
+  </div>
+
+  <div class="pub">
+    <span class="title">Beyond engagement: demographic, temporal, and topic variation in misinformation exposure on Facebook across European media systemic regions</span>
+    <span class="authors"><span class="me">Holt, A. E.</span>, Charquero-Ballester, M., Walter, J. G., &amp; Bechmann, A. (2025)</span>
+    <span class="venue"><em>Journal of Elections, Public Opinion and Parties</em>, 35(3), 432–451</span>
+    <span class="doi"><a href="https://doi.org/10.1080/17457289.2025.2514198">doi.org/10.1080/17457289.2025.2514198</a></span>
+  </div>
+
+  <h2>Conference contributions</h2>
+
+  <div class="pub">
+    <span class="title">Contrasting Instructive vs. Reflective AI Feedback Chatbots in the Classroom</span>
+    <span class="authors">Hansen, I. B., Hansen, R. R., <span class="me">Holt, A. E.</span>, &amp; Prilop, C. N. (2026)</span>
+    <span class="venue">EARLI SIG 6 &amp; 7 Conference, Zürich</span>
+  </div>
+
+  <div class="pub">
+    <span class="title">Exploring reflective vs. instructional AI feedback on students' abstract writing</span>
+    <span class="authors">Hansen, I. B., Hansen, R. R., <span class="me">Holt, A. E.</span>, &amp; Prilop, C. N. (2026)</span>
+    <span class="venue">NERA Conference (Nordic Educational Research Association)</span>
+  </div>
+
+  <h2>Conference participation</h2>
+  <dl class="tl">
+    <dt>26 Aug 2026</dt>
+    <dd>
+      <span class="what"><a href="https://conferences.au.dk/ddc-pre-conference">Social Media Influence: Understanding Digital Influence Infrastructures</a><span class="tag org">organiser</span></span>
+      <span class="where">Pre-conference to Democracy &amp; Digital Citizenship 2026 · Aarhus Institute of Advanced Studies, Aarhus University</span>
+    </dd>
+
+    <dt>Aug 2026</dt>
+    <dd>
+      <span class="what">Conference on Democracy &amp; Digital Citizenship 2026</span>
+      <span class="where">Aarhus Institute of Advanced Studies, Aarhus University</span>
+    </dd>
+
+    <dt>Sep 2024</dt>
+    <dd>
+      <span class="what">ECREA 2024: Communication &amp; Social (Dis)order<span class="tag">presented</span></span>
+      <span class="where">University of Ljubljana, Slovenia</span>
+    </dd>
+
+    <dt>Sep 2024</dt>
+    <dd>
+      <span class="what">Democracy &amp; Digital Citizenship Conference<span class="tag">presented</span></span>
+      <span class="where">University of Southern Denmark, Odense</span>
+    </dd>
+
+    <dt>Dec 2023</dt>
+    <dd>
+      <span class="what">SSH-Masshine: Generative Methods</span>
+      <span class="where">Aalborg University, Copenhagen</span>
+    </dd>
+
+    <dt>Oct 2023</dt>
+    <dd>
+      <span class="what">Dubrovnik Media Days<span class="tag">presented</span></span>
+      <span class="where">University of Dubrovnik, Croatia</span>
+    </dd>
+
+    <dt>Aug 2023</dt>
+    <dd>
+      <span class="what">NordMedia23: Technological Takeover?</span>
+      <span class="where">University of Bergen, Norway</span>
+    </dd>
+
+    <dt>Aug 2023</dt>
+    <dd>
+      <span class="what">NORDIS Final Conference: The Future Landscape of Disinformation</span>
+      <span class="where">Bergen, Norway</span>
+    </dd>
+  </dl>
+
+  <h2>Teaching</h2>
+  <dl class="tl">
+    <dt>Autumn 2024</dt>
+    <dd>
+      <span class="what">Research Design and Methods: Case Studies</span>
+      <span class="where">MA level, 20 ECTS · co-teacher · Aarhus University</span>
+      <span class="note">Taught AI literacy and generative AI as a writing tool (41 hours of class time).</span>
+    </dd>
+  </dl>
+
+  <h2>Positions</h2>
+  <dl class="tl">
+    <dt>Spring 2026</dt>
+    <dd>
+      <span class="what">Visiting Scholar</span>
+      <span class="where">Annenberg School for Communication, University of Pennsylvania</span>
+      <span class="note">Hosted by Professor Sandra González-Bailón.</span>
+    </dd>
+
+    <dt>2024 –</dt>
+    <dd>
+      <span class="what">PhD Fellow</span>
+      <span class="where">DATALAB – Center for Digital Social Research, Aarhus University</span>
+    </dd>
+
+    <dt>2023 – 2024</dt>
+    <dd>
+      <span class="what">Research Assistant</span>
+      <span class="where">DATALAB – Center for Digital Social Research, Aarhus University</span>
+    </dd>
+
+    <dt>2021 – 2022</dt>
+    <dd>
+      <span class="what">Research Assistant (part time)</span>
+      <span class="where">Cognition &amp; Behavior Lab, Aarhus University</span>
+    </dd>
+  </dl>
+
+  <h2>Education</h2>
+  <dl class="tl">
+    <dt>2020 – 2022</dt>
+    <dd>
+      <span class="what">MA, Cognitive Semiotics</span>
+      <span class="where">Aarhus University</span>
+      <span class="note">Thesis: <em>Kan man blive klogere af at tale med andre?</em> — on the consistency of the wisdom of deliberate crowds effect across knowledge domains — <a href="papers.html">readable among my student papers</a></span>
+    </dd>
+
+    <dt>2017 – 2020</dt>
+    <dd>
+      <span class="what">BA, Philosophy and Psychology</span>
+      <span class="where">Roskilde University</span>
+      <span class="note">Thesis: <em>Surveillance Technology during the COVID-19 Pandemic in Denmark</em> — <a href="papers.html">readable among my student papers</a></span>
+    </dd>
+  </dl>
+
+  <h2>Projects &amp; coursework</h2>
+  <a class="project" href="lda.html">
+    <strong>LDA topic model visualisations →</strong>
+    <span>Interactive pyLDAvis models built for the Computational Linguistics exam, Aarhus University, spring 2021.</span>
+  </a>
+  <a class="project" href="papers.html">
+    <strong>Student papers →</strong>
+    <span>My master's and bachelor's theses and the semester projects behind them, 2018–2022. Readable in the browser, with English summaries.</span>
+  </a>
+
+  <footer>
+    <h3>AI declaration</h3>
+    <p>
+      This page was created in cooperation with Claude, Anthropic's AI assistant. Claude drafted the
+      HTML and CSS and assembled the publication list from my public Aarhus University Pure and ORCID
+      records; the content was reviewed and approved by me.
+    </p>
+    <dl>
+      <dt>Model</dt><dd>Claude Opus 5 (<code>claude-opus-5</code>)</dd>
+      <dt>Interface</dt><dd>Claude Code in the Claude desktop app, agentic session with file-editing and web-search tools enabled</dd>
+      <dt>Date</dt><dd>September 2026</dd>
+      <dt>Sources used</dt><dd>pure.au.dk, orcid.org, asc.upenn.edu (public profile pages)</dd>
+    </dl>
+  </footer>
+
+</div>
+</body>
+</html>

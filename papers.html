@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Student papers — Anton Elias Holt</title>
+<style>
+  :root {
+    --accent: #90c7c5;
+    --accent-dark: #4b8b89;
+    --ink: #1c1c1c;
+    --muted: #5c5c5c;
+    --rule: #e3e3e3;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  a { color: var(--accent-dark); }
+
+  header {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--rule);
+    flex: 0 0 auto;
+  }
+  .back { font-size: 14px; text-decoration: none; }
+  .back:hover { text-decoration: underline; }
+  h1 { margin: 8px 0 4px; font-size: 24px; letter-spacing: -0.3px; }
+  header p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .layout { flex: 1 1 auto; display: flex; min-height: 0; }
+
+  /* Sidebar */
+  nav {
+    flex: 0 0 290px;
+    border-right: 1px solid var(--rule);
+    padding: 12px 0;
+    overflow-y: auto;
+  }
+  nav ul { list-style: none; margin: 0; padding: 0; }
+  nav a {
+    display: block;
+    padding: 11px 20px;
+    text-decoration: none;
+    color: var(--ink);
+    border-left: 3px solid transparent;
+  }
+  nav a:hover { background: #f4f8f8; }
+  nav a.active { border-left-color: var(--accent); background: #f4f8f8; }
+  nav .t { display: block; font-size: 15px; line-height: 1.35; }
+  nav a.active .t { color: var(--accent-dark); font-weight: 600; }
+  nav .m { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  /* Right pane */
+  .viewer { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; }
+
+  /* Slim action bar above the paper */
+  .bar {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 18px;
+    padding: 7px 22px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13.5px;
+  }
+  .bar a, .bar button {
+    background: none; border: 0; padding: 0;
+    font: inherit; color: var(--accent-dark);
+    cursor: pointer; text-decoration: none;
+  }
+  .bar a:hover, .bar button:hover { text-decoration: underline; }
+
+  /* Metadata, revealed only on request */
+  .details {
+    flex: 0 0 auto;
+    padding: 14px 22px 16px;
+    border-bottom: 1px solid var(--rule);
+    background: #f4f8f8;
+    max-height: 45vh;
+    overflow-y: auto;
+  }
+  .details h2 { margin: 0; font-size: 18px; line-height: 1.3; }
+  .details .sub { margin: 2px 0 0; color: var(--muted); font-style: italic; font-size: 15px; }
+  .details .english { margin: 6px 0 0; font-size: 14px; color: var(--muted); }
+  .details .meta { margin: 8px 0 0; font-size: 14px; color: var(--muted); }
+  .details .people { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
+  .details .me { color: var(--ink); font-weight: 600; }
+  .details .abstract { margin: 12px 0 0; font-size: 14.5px; line-height: 1.55; }
+  .details .abstract b {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-dark);
+    margin-bottom: 4px;
+  }
+
+  .viewer iframe { flex: 1 1 auto; width: 100%; border: 0; display: block; background: #f4f4f4; }
+
+  @media (max-width: 860px) {
+    .layout { flex-direction: column; }
+    nav { flex: 0 0 auto; border-right: 0; border-bottom: 1px solid var(--rule); max-height: 200px; }
+    nav a { border-left: 0; border-bottom: 3px solid transparent; }
+    nav a.active { border-left: 0; border-bottom-color: var(--accent); }
+    .viewer iframe { min-height: 70vh; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back" href="index.html">← Anton Elias Holt</a>
+  <h1>Student papers</h1>
+  <p>My master's thesis, my bachelor's thesis, and the semester projects that led up to them — Aarhus University and Roskilde University, 2018–2022. All are written in Danish; each carries an English summary.</p></header>
+
+<div class="layout">
+  <nav>
+    <ul id="list"></ul>
+    <noscript>
+      <ul>
+        <li><a href="papers/Speciale%20i%20Kognitiv%20Semiotik%20-%20Anton%20Holt.pdf"><span class="t">Kan man blive klogere af at tale med andre?</span><span class="m">Master's thesis · Spring 2022</span></a></li>
+        <li><a href="papers/Bachelorprojekt%20med%20hovedv%C3%A6gten%20p%C3%A5%20Filosofi%20og%20Videnskabsteori,%20Gruppe%20nummer%20S2025811723,%20122354%20anslag.pdf"><span class="t">Overvågningsteknologiens påvirkning på demokratiet</span><span class="m">Bachelor's thesis · May 2020</span></a></li>
+        <li><a href="papers/semesterprojekt%20i%20Filosofi%20og%20Videnskabsteori.pdf"><span class="t">Tinder som tilfredsstillelsesteknologi</span><span class="m">5th semester project · December 2019</span></a></li>
+        <li><a href="papers/semesterprojekt%20i%20Psykologi%20-%20F19%20-%20Kunst%20kvalitet%20og%20validering.pdf"><span class="t">Kunst – kvalitet og validering</span><span class="m">4th semester project · Spring 2019</span></a></li>
+        <li><a href="papers/Semesterporjekt%20-%20kunstforst%C3%A5elsens%20psykologi.pdf"><span class="t">Kunstforståelsens psykologi</span><span class="m">2nd semester project · Spring 2018</span></a></li>
+      </ul>
+    </noscript>
+  </nav>
+
+  <div class="viewer">
+    <div class="bar">
+      <button type="button" id="i-toggle" aria-expanded="false">Details &amp; abstract</button>
+      <a id="i-newtab" href="#" target="_blank" rel="noopener">Open in new tab</a>
+      <a id="i-download" href="#" download>Download PDF</a>
+    </div>
+    <div class="details" id="i-details" hidden>
+      <h2 id="i-title"></h2>
+      <p class="sub" id="i-sub"></p>
+      <p class="english" id="i-english"></p>
+      <p class="meta" id="i-meta"></p>
+      <p class="people" id="i-people"></p>
+      <div class="abstract" id="i-abstract"></div>
+    </div>
+    <iframe id="frame" title="Paper"></iframe>
+  </div>
+</div>
+
+<script>
+/* --------------------------------------------------------------------------
+   Papers, newest first. Metadata read from the PDFs themselves (embedded
+   properties + title pages). `file` is the path inside papers/ — it is URL-
+   encoded at runtime, so spaces and Danish characters can stay as they are.
+   -------------------------------------------------------------------------- */
+var papers = [
+  {
+    title: "Kan man blive klogere af at tale med andre?",
+    sub: "En undersøgelse af små gruppers beslutningsduelighed indenfor forskellige vidensområder",
+    english: "An investigation of the consistency of the wisdom of deliberate crowds effect across different knowledge domains",
+    course: "Master's thesis, Cognitive Semiotics",
+    place: "Aarhus University",
+    date: "Spring 2022",
+    pages: 44,
+    supervisor: "Karsten Olsen",
+    authors: ["Anton Elias Holt"],
+    file: "papers/Speciale i Kognitiv Semiotik - Anton Holt.pdf",
+    abstract: "Discussing questions in small groups can improve the collective wisdom of a larger crowd, and averaging as few as four group answers can outcompete the wisdom of crowds effect of a crowd of any size. This thesis investigates that effect — the wisdom of deliberate crowds, described by Navajas et al. (2018) — through a novel experimental design adapted from their paper, asking whether it holds in domains requiring more specialized knowledge. The experiment combines general knowledge questions with scientific questions and questions about climate change, the latter motivated by Fischer et al. (2019), who found that German citizens show lower metacognitive calibration on climate topics and attributed this to online misinformation. The experiment did not reproduce the wisdom of deliberate crowds effect across knowledge domains. Participants did, however, show lower metacognitive calibration on climate change questions than on either general knowledge or scientific questions, and group answers outcompeted individual answers on climate change questions — indicating that small-group discussion can produce good results in domains marked by high uncertainty among group members."
+  },
+  {
+    title: "Overvågningsteknologiens påvirkning på demokratiet",
+    sub: "",
+    course: "Bachelor's thesis, Philosophy and Science Studies (6th semester)",
+    place: "Roskilde University",
+    date: "May 2020",
+    pages: 54,
+    supervisor: "Cæcilie Varslev-Pedersen",
+    authors: ["Anders Leon Nordkap", "Anton Elias Holt", "Jens Christian Borup Jensen"],
+    file: "papers/Bachelorprojekt med hovedvægten på Filosofi og Videnskabsteori, Gruppe nummer S2025811723, 122354 anslag.pdf",
+    abstract: "This paper examines how surveillance technologies affect the democratic process. Through Andrew Feenberg's critical constructivism and Shoshana Zuboff's theory of instrumentarian power and surveillance capitalism, we problematize and analyze the development of the Danish mobile phone application Smittestop, developed during the Covid-19 pandemic by NetCompany in cooperation with the Danish government to trace chains of infection. The paper concludes that although the app serves a democratic function, it also legitimizes the use of other surveillance technologies and thereby undermines one of the most fundamental aspects of democracy: trust. Technologies are not neutral mediums deployed as the natural solution to society's problems — they are developed within specific power structures, coded with the dominant logic of accumulation, and thereby affect the societal definition of what qualifies as a problem."
+  },
+  {
+    title: "Tinder som tilfredsstillelsesteknologi",
+    sub: "Repressiv desublimering eller naturlig udvikling?",
+    course: "5th semester project, Philosophy and Science Studies",
+    place: "Roskilde University",
+    date: "December 2019",
+    pages: 37,
+    supervisor: "Søren Riis",
+    authors: ["Anders Leon Nordkap", "Anton Elias Holt", "Jens Christian Borup Jensen"],
+    file: "papers/semesterprojekt i Filosofi og Videnskabsteori.pdf",
+    abstract: "This paper examines how technology affects modern society and in what capacity it plays a role in the alteration of power structures, through a philosophical analysis of the dating application Tinder. The theoretical base is the work of Herbert Marcuse and Michel Foucault, with additional reference to Jacques Ellul on the role of technique in modern society. Marcuse's One-Dimensional Man is used to highlight how Tinder can act as an instrument of 'repressive desublimation'; Foucault's theory of power is then used to address Tinder's capacity to normalize marginalized sexualities and genders, at once altering and reinforcing the structures of society. The paper concludes that Tinder can serve repressive desublimation, but is also a nominalistic technology — a view that adds a dimension of potential beyond a strictly repressive function."
+  },
+  {
+    title: "Kunst – kvalitet og validering",
+    sub: "",
+    course: "4th semester project, Psychology",
+    place: "Roskilde University",
+    date: "Spring 2019",
+    pages: 49,
+    supervisor: "Bettina Christel Hjortholt",
+    authors: ["Anton Elias Holt", "Jesper Thorn", "Louise Victoria Hagedorn Tonnesen"],
+    file: "papers/semesterprojekt i Psykologi - F19 - Kunst kvalitet og validering.pdf",
+    abstract: "This project investigates how art comes to be validated in terms of recognition from the external world, and asks where in the relationship between artist, art-object, viewer and culture the quality of art must exist in order to facilitate that recognition. The theoretical perspectives include Carl Jung as partially interpreted by Sylvester Wojtkowski, Howard W. Gardner, Pierre Bourdieu, Wassily Kandinsky, Leo Tolstoy, and Aristotle as interpreted by Eva Berczeller. The empirical material is a semi-structured interview with Anders Kold, curator and Head of Acquisitions at Louisiana Museum of Modern Art. We conclude that all four elements — artist, art-object, viewer and culture — play distinct roles in the validation process, though which must be prioritized depends on theoretical perspective."
+  },
+  {
+    title: "Kunstforståelsens psykologi",
+    sub: "",
+    course: "2nd semester project, Humanities (HumBach, HAB-C)",
+    place: "Roskilde University",
+    date: "Spring 2018",
+    pages: 52,
+    supervisor: "Bjarne Sode Funch",
+    authors: ["Anders Leon Nordkap", "Anton Elias Holt", "Asger Wollmer Nielsen", "Jens Christian Borup Jensen", "Louise Victoria Hagedorn Tonnesen"],
+    file: "papers/Semesterporjekt - kunstforståelsens psykologi.pdf",
+    abstract: "This paper examines which conditions are required in order to attain an optimal understanding of art, and how the dissemination of a piece of art can facilitate greater understanding. Visitors at Louisiana Museum of Modern Art were interviewed alongside the curator of the exhibition, and their understandings compared. The analysis draws on Mihaly Csikszentmihalyi and Rick E. Robinson's theory of the four dimensions of art experience and Michael Parsons' theory of aesthetic experience, using Amedeo Giorgi's phenomenological approach to analyze the transcribed interviews on the informants' own terms. The project finds that background knowledge is a prerequisite for complex art understanding, alongside well-developed cognitive functions."
+  }
+];
+
+var ME = "Anton Elias Holt";
+var list = document.getElementById("list");
+
+papers.forEach(function (paper, i) {
+  var li = document.createElement("li");
+  var a = document.createElement("a");
+  a.href = encodeURI(paper.file);
+
+  var t = document.createElement("span");
+  t.className = "t";
+  t.textContent = paper.title;
+
+  var m = document.createElement("span");
+  m.className = "m";
+  m.textContent = paper.course.split(",")[0] + " · " + paper.date;
+
+  a.appendChild(t);
+  a.appendChild(m);
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    show(i);
+  });
+
+  li.appendChild(a);
+  list.appendChild(li);
+});
+
+var abstractBox = document.getElementById("i-abstract");
+var details = document.getElementById("i-details");
+var toggle = document.getElementById("i-toggle");
+
+toggle.addEventListener("click", function () {
+  details.hidden = !details.hidden;
+  toggle.setAttribute("aria-expanded", String(!details.hidden));
+  toggle.textContent = details.hidden ? "Details & abstract" : "Hide details";
+});
+
+function show(i) {
+  var paper = papers[i];
+  var href = encodeURI(paper.file);
+
+  var links = list.querySelectorAll("a");
+  for (var j = 0; j < links.length; j++) {
+    links[j].classList.toggle("active", j === i);
+  }
+
+  document.getElementById("i-title").textContent = paper.title;
+
+  var sub = document.getElementById("i-sub");
+  sub.textContent = paper.sub || "";
+  sub.hidden = !paper.sub;
+
+  var english = document.getElementById("i-english");
+  english.textContent = paper.english ? "English title: " + paper.english : "";
+  english.hidden = !paper.english;
+
+  document.getElementById("i-meta").textContent =
+    [paper.course, paper.place, paper.date, paper.pages + " pages"].join(" · ");
+
+  var people = document.getElementById("i-people");
+  people.innerHTML = "";
+  if (paper.authors.length === 1) {
+    people.appendChild(document.createTextNode("Sole author. "));
+  } else {
+    people.appendChild(document.createTextNode("Written with "));
+    paper.authors.forEach(function (name, k) {
+      if (k > 0) {
+        people.appendChild(document.createTextNode(k === paper.authors.length - 1 ? " and " : ", "));
+      }
+      var span = document.createElement("span");
+      if (name === ME) { span.className = "me"; }
+      span.textContent = name;
+      people.appendChild(span);
+    });
+    people.appendChild(document.createTextNode(". "));
+  }
+  people.appendChild(document.createTextNode("Supervisor: " + paper.supervisor + "."));
+
+  document.getElementById("frame").src = href;
+  document.getElementById("i-newtab").href = href;
+
+  var download = document.getElementById("i-download");
+  download.href = href;
+  download.setAttribute("download", paper.file.split("/").pop());
+
+  abstractBox.innerHTML = "";
+  var label = document.createElement("b");
+  label.textContent = "Abstract";
+  abstractBox.appendChild(label);
+  abstractBox.appendChild(document.createTextNode(paper.abstract));
+
+  details.hidden = true;
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.textContent = "Details & abstract";
+}
+
+show(0);
+</script>
+
+</body>
+</html>

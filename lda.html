@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LDA topic models — Anton Elias Holt</title>
+<style>
+  :root {
+    --accent: #90c7c5;
+    --accent-dark: #4b8b89;
+    --ink: #1c1c1c;
+    --muted: #5c5c5c;
+    --rule: #e3e3e3;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  a { color: var(--accent-dark); }
+
+  header {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--rule);
+    flex: 0 0 auto;
+  }
+  .back { font-size: 14px; text-decoration: none; }
+  .back:hover { text-decoration: underline; }
+  h1 { margin: 8px 0 4px; font-size: 24px; letter-spacing: -0.3px; }
+  header p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .layout {
+    flex: 1 1 auto;
+    display: flex;
+    min-height: 0;
+  }
+
+  nav {
+    flex: 0 0 190px;
+    border-right: 1px solid var(--rule);
+    padding: 18px 0;
+    overflow-y: auto;
+  }
+  nav ul { list-style: none; margin: 0; padding: 0; }
+  nav a {
+    display: block;
+    padding: 9px 20px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 15px;
+    border-left: 3px solid transparent;
+  }
+  nav a:hover { background: #f4f8f8; }
+  nav a.active {
+    border-left-color: var(--accent);
+    background: #f4f8f8;
+    color: var(--accent-dark);
+    font-weight: 600;
+  }
+
+  .viewer { flex: 1 1 auto; min-width: 0; }
+  .viewer iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+  @media (max-width: 700px) {
+    .layout { flex-direction: column; }
+    nav { flex: 0 0 auto; border-right: 0; border-bottom: 1px solid var(--rule); }
+    nav ul { display: flex; flex-wrap: wrap; }
+    nav a { border-left: 0; border-bottom: 3px solid transparent; padding: 8px 14px; }
+    nav a.active { border-left: 0; border-bottom-color: var(--accent); }
+    .viewer { height: 70vh; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back" href="index.html">← Anton Elias Holt</a>
+  <h1>LDA topic model visualisations</h1>
+  <p>Computational Linguistics exam · Aarhus University · Spring 2021</p>
+</header>
+
+<div class="layout">
+  <nav>
+    <ul id="pdfs">
+      <li><a class="active" href="models/All25_LDA_model.html">Aggregate model</a></li>
+      <li><a href="models/DF16_LDA_model.html">DF model</a></li>
+      <li><a href="models/EL14_LDA_model.html">EL model</a></li>
+      <li><a href="models/KF15_LDA_model.html">KF model</a></li>
+      <li><a href="models/RV17_LDA_model.html">RV model</a></li>
+      <li><a href="models/S19_LDA_model.html">S model</a></li>
+      <li><a href="models/SF16_LDA_model.html">SF model</a></li>
+      <li><a href="models/V13_LDA_model.html">V model</a></li>
+    </ul>
+  </nav>
+
+  <div class="viewer">
+    <iframe id="frame" src="models/All25_LDA_model.html" title="LDA topic model visualisation"></iframe>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('#pdfs a').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelectorAll('#pdfs a').forEach(function (other) {
+        other.classList.remove('active');
+      });
+      link.classList.add('active');
+      document.getElementById('frame').src = link.getAttribute('href');
+    });
+  });
+</script>
+
+</body>
+</html>
